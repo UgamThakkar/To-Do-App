@@ -1,0 +1,19 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592 Back</a> 
+    <!--we are sending user back to the home page using the given url here but our homepage url is slightly diff here what it looks like is     path('', TaskList.as_view(), name = 'tasks'), 
+    so we are providing the 'tasks' in the url here besides the gpback button but  our url is empty so we are using that name field-->
+        
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" name="Submit">
+    </form> 
+    
+</div>
+{% endblock %}
